@@ -1,5 +1,7 @@
 # planodefogo
 
+Programa feito por Cristiano Luís Turbino de França e Silva (SILVA, C. L. T. F.).
+
 Projeto final da disciplina MIN755
 
 Programa feito em linguagem Pascal, utilizando o Lazarus.
