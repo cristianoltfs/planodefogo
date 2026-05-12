@@ -1,0 +1,8 @@
+object Form1: TForm1
+  Left = 2295
+  Height = 240
+  Top = 186
+  Width = 320
+  Caption = 'Plano de Fogo v1.0'
+  LCLVersion = '4.0.0.4'
+end
