@@ -13,9 +13,15 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
+    Bevel1: TBevel;
+    Bevel2: TBevel;
 
     btnSair: TButton;
     btnCalcular: TButton;
+    CmbBxDensidadeDaRocha: TComboBox;
+    edtDensidadeExplosivo: TEdit;
+    edtDensidadeDaRocha: TEdit;
+    edtDiametroDoExplosivo: TEdit;
 
     edtCC: TEdit;  // Capacidade da caçamba de carregamento (m cúbicos)
     edtAD: TEdit;  // Tamanho de admissão do britador (m) (AD)
@@ -28,6 +34,9 @@ type
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
     lblTB: TLabel;
     lblRT: TLabel;  //  Resitência à tração da rocha (MPA) (RT):
 
@@ -73,6 +82,11 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+
+  CmbBxDensidadeDaRocha.Items.Clear;
+  CmbBxDensidadeDaRocha.Items.Add('g/cm³');
+  CmbBxDensidadeDaRocha.Items.Add('t/m³');
+  CmbBxDensidadeDaRocha.ItemIndex := 0;
 
 end;
 
