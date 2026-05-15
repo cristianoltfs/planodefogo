@@ -1,11 +1,11 @@
 object Form1: TForm1
   Left = 2389
-  Height = 521
+  Height = 514
   Top = 169
-  Width = 819
+  Width = 825
   Caption = 'PlanFogo v0.1'
-  ClientHeight = 521
-  ClientWidth = 819
+  ClientHeight = 514
+  ClientWidth = 825
   Menu = MainMenu1
   LCLVersion = '4.6.0.0'
   OnCreate = FormCreate
@@ -67,12 +67,12 @@ object Form1: TForm1
     Caption = 'Diâmetro de perfuração/explosivo (mm)'
   end
   object edtDiametroPerfuracao: TEdit
-    Left = 344
+    Left = 304
     Height = 36
     Top = 168
     Width = 80
     TabOrder = 3
-    Text = '160'
+    Text = '102'
   end
   object Label4: TLabel
     Left = 32
@@ -145,32 +145,32 @@ object Form1: TForm1
     Caption = 'Densidade da rocha (g/cm³ ou t/m³)'
   end
   object edtDensidadeExplosivo: TEdit
-    Left = 344
+    Left = 304
     Height = 36
     Top = 208
     Width = 80
     TabOrder = 6
-    Text = '2'
+    Text = '0.85'
   end
   object edtDensidadeDaRocha: TEdit
-    Left = 344
+    Left = 304
     Height = 36
     Top = 248
     Width = 80
     TabOrder = 7
-    Text = '3'
+    Text = '2.7'
   end
   object Label9: TLabel
-    Left = 464
+    Left = 408
     Height = 19
-    Top = 256
+    Top = 216
     Width = 88
     Caption = 'Afastamento:'
   end
   object lblAfastamento: TLabel
-    Left = 568
+    Left = 512
     Height = 19
-    Top = 256
+    Top = 216
     Width = 25
     Caption = '0 m'
   end
@@ -182,7 +182,7 @@ object Form1: TForm1
     Caption = 'Altura da bancada (m)'
   end
   object edtAlturaBancada: TEdit
-    Left = 344
+    Left = 304
     Height = 36
     Top = 288
     Width = 80
@@ -190,44 +190,74 @@ object Form1: TForm1
     Text = '15'
   end
   object Label11: TLabel
-    Left = 464
+    Left = 408
     Height = 19
     Top = 296
     Width = 99
     Caption = 'Fragmentação:'
   end
   object lblFragmentacao: TLabel
-    Left = 576
+    Left = 520
     Height = 1
     Top = 296
     Width = 1
   end
   object Label12: TLabel
-    Left = 664
+    Left = 608
     Height = 19
     Top = 296
     Width = 60
     Caption = 'Bancada:'
   end
   object lblBancada: TLabel
-    Left = 736
+    Left = 680
     Height = 1
     Top = 296
     Width = 1
   end
   object Label13: TLabel
-    Left = 624
+    Left = 408
     Height = 19
     Top = 256
     Width = 93
     Caption = 'Espaçamento:'
   end
   object lblEspacamento: TLabel
-    Left = 728
+    Left = 512
     Height = 19
     Top = 256
     Width = 25
     Caption = '0 m'
+  end
+  object Label14: TLabel
+    Left = 568
+    Height = 19
+    Top = 256
+    Width = 100
+    Caption = 'Subperfuração:'
+  end
+  object lblSubperfuracao: TLabel
+    Left = 680
+    Height = 19
+    Top = 256
+    Width = 25
+    Caption = '0 m'
+  end
+  object Label15: TLabel
+    Left = 408
+    Height = 19
+    Top = 176
+    Width = 40
+    Caption = 'Rocha'
+  end
+  object CmbBxRocha: TComboBox
+    Left = 464
+    Height = 36
+    Top = 168
+    Width = 204
+    ItemHeight = 0
+    TabOrder = 9
+    Text = 'CmbBxRocha'
   end
   object MainMenu1: TMainMenu
     Left = 720

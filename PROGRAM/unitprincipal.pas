@@ -19,6 +19,7 @@ type
 
     btnSair: TButton;
     btnCalcular: TButton;
+    CmbBxRocha: TComboBox;
     edtAlturaBancada: TEdit;
 
 
@@ -34,6 +35,9 @@ type
     Label11: TLabel;
     Label12: TLabel;
     Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    lblSubperfuracao: TLabel;
     lblEspacamento: TLabel;
     lblBancada: TLabel;
     lblFragmentacao: TLabel;
@@ -86,6 +90,9 @@ type
     espacamento : real;
     espacamentoStr : string;
 
+    subperfuracao : real;
+    subperfuracaoStr : string;
+
   end;
 
 var
@@ -104,6 +111,13 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+
+  CmbBxRocha.Items.Clear;
+  CmbBxRocha.Items.Add('Calcário');
+  CmbBxRocha.Items.Add('Granito');
+  CmbBxRocha.Items.Add('Itabirito');
+  CmbBxRocha.Items.Add('Outra');
+  CmbBxRocha.ItemIndex := 0;
 
 end;
 
@@ -169,13 +183,21 @@ begin
   lblBancada.Caption := bancada;
 
   // cálculo do espaçamento
-  if rc > 120
-    then espacamento := 1.15 * afastamento
-    else if rc >= 70
-      then espacamento := 1.2 * afastamento
-      else espacamento := 1.25 * afastamento;
+
+  if CmbBxRocha.ItemIndex = 0
+    then espacamento := 2 * afastamento
+    else if rc > 120
+      then espacamento := 1.15 * afastamento
+      else if rc >= 70
+        then espacamento := 1.2 * afastamento
+        else espacamento := 1.25 * afastamento;
   str(espacamento:0:1, espacamentoStr);
   lblEspacamento.Caption := espacamentoStr + ' m';
+
+  // cálculo da subperfuração
+  subperfuracao := 0.3 * afastamento;
+  str(subperfuracao:0:1, subperfuracaoStr);
+  lblSubperfuracao.Caption := subperfuracaoStr;
 
 end;
 
