@@ -13,22 +13,29 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
+
     Bevel1: TBevel;
     Bevel2: TBevel;
 
     btnSair: TButton;
     btnCalcular: TButton;
-    CmbBxDensidadeDaRocha: TComboBox;
+    edtAlturaBancada: TEdit;
+
+
     edtDensidadeExplosivo: TEdit;
     edtDensidadeDaRocha: TEdit;
-    edtDiametroDoExplosivo: TEdit;
-
     edtCC: TEdit;  // Capacidade da caçamba de carregamento (m cúbicos)
     edtAD: TEdit;  // Tamanho de admissão do britador (m) (AD)
     edtDiametroPerfuracao: TEdit;  //  Diâmetro de perfuração (mm)
     edtRC: TEdit;  // Resistência à compressão da rocha (MPa) (RC)
 
     Label1: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    lblBancada: TLabel;
+    lblFragmentacao: TLabel;
+    lblAfastamento: TLabel;  //  Valor do afastamento
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -64,6 +71,17 @@ type
     tbCacamba : real;  // tamanho dos blocos expresso por sua maior longitude (capacidade da caçamba)
     tbCacambaStr : string;
 
+    diametroPerfuracao : real;
+    densidadeExplosivo : real;
+    densidadeRocha : real;
+    afastamento : real;
+    afastamentoStr : string;
+
+    alturaBancada : real;
+    relacaoBancadaAfastamento : real;
+    fragmentacao : string;
+    bancada : string;
+
   end;
 
 var
@@ -83,16 +101,12 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
 
-  CmbBxDensidadeDaRocha.Items.Clear;
-  CmbBxDensidadeDaRocha.Items.Add('g/cm³');
-  CmbBxDensidadeDaRocha.Items.Add('t/m³');
-  CmbBxDensidadeDaRocha.ItemIndex := 0;
-
 end;
 
 procedure TForm1.btnCalcularClick(Sender: TObject);
 begin
 
+  // cálculo da resistência à tração em relação à compressão
   if edtRC.Text <> ''
   then
   begin
@@ -102,6 +116,7 @@ begin
     lblRT.Caption := rtStr + ' MPa';
   end;
 
+  //  cálculo do tamanho do bloco em relação ao tamanho do britador e da caçamba
   tbBritador := 0.8 * StrToFloat(edtAD.Text);
   tbCacamba := 0.7 * Power(StrToFloat(edtCC.text), 1/3);
   if tbCacamba < tbBritador
@@ -116,6 +131,38 @@ begin
       lblTB.Caption := tbBritadorStr + ' m';
     end;
 
+  // Cálculo do afastamento
+  diametroPerfuracao := StrToFloat(edtDiametroPerfuracao.Text);
+  densidadeExplosivo := StrToFloat(edtDensidadeExplosivo.Text);
+  densidadeRocha := StrToFloat(edtDensidadeDaRocha.Text);
+  if diametroPerfuracao < 140.0
+    then afastamento :=  0.0123*(2*(densidadeExplosivo/densidadeRocha)+1.5)*diametroPerfuracao
+    else if rc > 120
+      then afastamento :=  0.00877*(2*(densidadeExplosivo/densidadeRocha)+1.5)*diametroPerfuracao
+      else if rc >= 70
+        then afastamento :=  0.00967*(2*(densidadeExplosivo/densidadeRocha)+1.5)*diametroPerfuracao
+        else afastamento :=  0.01053*(2*(densidadeExplosivo/densidadeRocha)+1.5)*diametroPerfuracao;
+  str(afastamento:0:1, afastamentoStr);
+  lblAfastamento.Caption := afastamentoStr + ' m';
+
+  // cálculo da relação entre altura da bancada e afastamento
+  alturaBancada := StrToFloat(edtAlturaBancada.Text);
+  relacaoBancadaAfastamento := alturaBancada / afastamento;
+  bancada := 'baixa';
+  if relacaoBancadaAfastamento < 2
+    then fragmentacao := 'ruim'
+    else if relacaoBancadaAfastamento < 3
+      then fragmentacao := 'regular'
+      else if relacaoBancadaAfastamento < 4
+        then fragmentacao := 'boa'
+        else if relacaoBancadaAfastamento >= 4
+          then
+          begin
+            fragmentacao := 'excelente';
+            bancada := 'alta';
+          end;
+  lblFragmentacao.Caption := fragmentacao;
+  lblBancada.Caption := bancada;
 end;
 
 procedure TForm1.MenuItem2Click(Sender: TObject);
