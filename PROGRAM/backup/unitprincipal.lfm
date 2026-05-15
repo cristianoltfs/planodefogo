@@ -262,7 +262,7 @@ object Form1: TForm1
   object Bevel3: TBevel
     Left = 24
     Height = 8
-    Top = 392
+    Top = 424
     Width = 785
   end
   object ScrllBrDiametroPerfuracao: TScrollBar
@@ -274,11 +274,41 @@ object Form1: TForm1
     TabOrder = 10
     OnChange = ScrllBrDiametroPerfuracaoChange
   end
-  object PaintBox1: TPaintBox
-    Left = 40
-    Height = 75
-    Top = 400
-    Width = 528
+  object lblFragRuim: TLabel
+    Left = 440
+    Height = 19
+    Top = 376
+    Width = 44
+    Caption = '[Ruim]'
+  end
+  object lblFragRegular: TLabel
+    Left = 496
+    Height = 19
+    Top = 376
+    Width = 61
+    Caption = '[Regular]'
+  end
+  object lblFragBoa: TLabel
+    Left = 565
+    Height = 19
+    Top = 376
+    Width = 35
+    Caption = '[Boa]'
+  end
+  object lblFragExcelente: TLabel
+    Left = 608
+    Height = 19
+    Top = 376
+    Width = 74
+    Caption = '[Excelente]'
+  end
+  object Panel1: TPanel
+    Left = 166
+    Height = 50
+    Top = 446
+    Width = 170
+    Caption = 'Panel1'
+    TabOrder = 11
   end
   object MainMenu1: TMainMenu
     Left = 720

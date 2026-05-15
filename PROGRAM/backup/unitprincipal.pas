@@ -38,6 +38,10 @@ type
     Label13: TLabel;
     Label14: TLabel;
     Label15: TLabel;
+    lblFragRuim: TLabel;
+    lblFragRegular: TLabel;
+    lblFragBoa: TLabel;
+    lblFragExcelente: TLabel;
     lblSubperfuracao: TLabel;
     lblEspacamento: TLabel;
     lblBancada: TLabel;
@@ -59,7 +63,7 @@ type
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
-    PaintBox1: TPaintBox;
+    Panel1: TPanel;
     ScrllBrDiametroPerfuracao: TScrollBar;
 
     procedure btnCalcularClick(Sender: TObject);
@@ -67,6 +71,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
     procedure ScrllBrDiametroPerfuracaoChange(Sender: TObject);
+
+    procedure AtualizarFragmentacao(frag: string);
 
   private
 
@@ -124,7 +130,7 @@ begin
   CmbBxRocha.ItemIndex := 0;
 
   ScrllBrDiametroPerfuracao.Min := 20;
-  ScrllBrDiametroPerfuracao.Max := 400;
+  ScrllBrDiametroPerfuracao.Max := 500;
   ScrllBrDiametroPerfuracao.Position := 102; // valor inicial
   ScrllBrDiametroPerfuracao.SmallChange := 1; // sesta move 1mm
   ScrllBrDiametroPerfuracao.LargeChange := 1; // clique na barra move 1mm
@@ -218,6 +224,9 @@ begin
       ShowMessage('Erro de Cálculo: ' + E.Message);
 
   end;
+
+  AtualizarFragmentacao(fragmentacao);
+
 end;
 
 procedure TForm1.MenuItem2Click(Sender: TObject);
@@ -232,6 +241,47 @@ begin
 
   btnCalcularClick(Sender);
 
+end;
+
+procedure TForm1.AtualizarFragmentacao(frag: string);
+var
+  labels: array[0..3] of TLabel;
+  nomes: array[0..3] of string;
+  cores: array[0..3] of TColor;
+  i: integer;
+begin
+  labels[0] := lblFragRuim;
+  labels[1] := lblFragRegular;
+  labels[2] := lblFragBoa;
+  labels[3] := lblFragExcelente;
+
+  nomes[0] := 'ruim';
+  nomes[1] := 'regular';
+  nomes[2] := 'boa';
+  nomes[3] := 'excelente';
+
+  cores[0] := clRed;
+  cores[1] := $00005FBB;  // laranja
+  cores[2] := $000077AA;  // amarelo
+  cores[3] := clGreen;
+
+  for i := 0 to 3 do
+  begin
+    if nomes[i] = frag then
+    begin
+      labels[i].Font.Bold := True;
+      labels[i].Font.Color := cores[i];
+      labels[i].Transparent := False;
+      labels[i].Color := clWhite;
+    end
+    else
+    begin
+      labels[i].Font.Bold := False;
+      labels[i].Font.Color := clGray;
+      labels[i].Color := clDefault;  // volta ao fundo padrão
+      labels[i].Transparent := TRUE;
+    end;
+  end;
 end;
 
 end.
