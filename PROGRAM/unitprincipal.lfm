@@ -278,29 +278,43 @@ object Form1: TForm1
     Left = 440
     Height = 19
     Top = 376
-    Width = 44
-    Caption = '[Ruim]'
+    Width = 34
+    Caption = 'Ruim'
   end
   object lblFragRegular: TLabel
-    Left = 496
+    Left = 488
     Height = 19
     Top = 376
-    Width = 61
-    Caption = '[Regular]'
+    Width = 51
+    Caption = 'Regular'
   end
   object lblFragBoa: TLabel
-    Left = 565
+    Left = 544
     Height = 19
     Top = 376
-    Width = 35
-    Caption = '[Boa]'
+    Width = 25
+    Caption = 'Boa'
   end
   object lblFragExcelente: TLabel
-    Left = 608
+    Left = 576
     Height = 19
     Top = 376
-    Width = 74
-    Caption = '[Excelente]'
+    Width = 64
+    Caption = 'Excelente'
+  end
+  object Label16: TLabel
+    Left = 432
+    Height = 19
+    Top = 376
+    Width = 11
+    Caption = '[  '
+  end
+  object Label17: TLabel
+    Left = 640
+    Height = 19
+    Top = 376
+    Width = 11
+    Caption = '  ]'
   end
   object MainMenu1: TMainMenu
     Left = 720

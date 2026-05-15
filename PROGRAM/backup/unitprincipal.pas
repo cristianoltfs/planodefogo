@@ -63,7 +63,6 @@ type
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
-    Panel1: TPanel;
     ScrllBrDiametroPerfuracao: TScrollBar;
 
     procedure btnCalcularClick(Sender: TObject);

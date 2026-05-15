@@ -21,14 +21,14 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitPrincipal"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="245"/>
-        <CursorPos X="66" Y="273"/>
+        <TopLine Value="247"/>
+        <CursorPos X="66" Y="275"/>
         <UsageCount Value="32"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="29">
+    <JumpHistory HistoryIndex="28">
       <Position>
         <Filename Value="unitprincipal.pas"/>
         <Caret Line="135" Column="22" TopLine="119"/>
@@ -79,10 +79,6 @@
       </Position>
       <Position>
         <Filename Value="unitprincipal.pas"/>
-        <Caret Line="116" Column="34" TopLine="174"/>
-      </Position>
-      <Position>
-        <Filename Value="unitprincipal.pas"/>
         <Caret Line="199" Column="66" TopLine="184"/>
       </Position>
       <Position>
@@ -96,10 +92,6 @@
       <Position>
         <Filename Value="unitprincipal.pas"/>
         <Caret Line="131" Column="78" TopLine="103"/>
-      </Position>
-      <Position>
-        <Filename Value="unitprincipal.pas"/>
-        <Caret Line="204" Column="87" TopLine="209"/>
       </Position>
       <Position>
         <Filename Value="unitprincipal.pas"/>
@@ -148,6 +140,10 @@
       <Position>
         <Filename Value="unitprincipal.pas"/>
         <Caret Line="273" Column="66" TopLine="245"/>
+      </Position>
+      <Position>
+        <Filename Value="unitprincipal.pas"/>
+        <Caret Line="274" Column="66" TopLine="246"/>
       </Position>
     </JumpHistory>
     <RunParams>

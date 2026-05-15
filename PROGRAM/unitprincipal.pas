@@ -38,6 +38,8 @@ type
     Label13: TLabel;
     Label14: TLabel;
     Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
     lblFragRuim: TLabel;
     lblFragRegular: TLabel;
     lblFragBoa: TLabel;
