@@ -33,6 +33,8 @@ type
     Label10: TLabel;
     Label11: TLabel;
     Label12: TLabel;
+    Label13: TLabel;
+    lblEspacamento: TLabel;
     lblBancada: TLabel;
     lblFragmentacao: TLabel;
     lblAfastamento: TLabel;  //  Valor do afastamento
@@ -81,6 +83,8 @@ type
     relacaoBancadaAfastamento : real;
     fragmentacao : string;
     bancada : string;
+    espacamento : real;
+    espacamentoStr : string;
 
   end;
 
@@ -163,6 +167,16 @@ begin
           end;
   lblFragmentacao.Caption := fragmentacao;
   lblBancada.Caption := bancada;
+
+  // cálculo do espaçamento
+  if rc > 120
+    then espacamento := 1.15 * afastamento
+    else if rc >= 70
+      then espacamento := 1.2 * afastamento
+      else espacamento := 1.25 * afastamento;
+  str(espacamento:0:1, espacamentoStr);
+  lblEspacamento.Caption := espacamentoStr;
+
 end;
 
 procedure TForm1.MenuItem2Click(Sender: TObject);
