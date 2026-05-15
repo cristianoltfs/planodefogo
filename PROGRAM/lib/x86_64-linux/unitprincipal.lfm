@@ -62,14 +62,14 @@ object Form1: TForm1
   object Label3: TLabel
     Left = 32
     Height = 19
-    Top = 176
+    Top = 224
     Width = 259
     Caption = 'Diâmetro de perfuração/explosivo (mm)'
   end
   object edtDiametroPerfuracao: TEdit
     Left = 304
     Height = 36
-    Top = 168
+    Top = 216
     Width = 80
     TabOrder = 3
     Text = '102'
@@ -77,14 +77,14 @@ object Form1: TForm1
   object Label4: TLabel
     Left = 32
     Height = 19
-    Top = 80
+    Top = 128
     Width = 245
     Caption = 'Tamanho de admissão do britador (m)'
   end
   object edtAD: TEdit
     Left = 344
     Height = 36
-    Top = 72
+    Top = 120
     Width = 80
     TabOrder = 4
     Text = '1.5'
@@ -92,14 +92,14 @@ object Form1: TForm1
   object Label5: TLabel
     Left = 32
     Height = 19
-    Top = 120
+    Top = 168
     Width = 302
     Caption = 'Capacidade da caçamba de carregamento (m³)'
   end
   object edtCC: TEdit
     Left = 344
     Height = 36
-    Top = 112
+    Top = 160
     Width = 80
     TabOrder = 5
     Text = '4'
@@ -107,47 +107,47 @@ object Form1: TForm1
   object Label6: TLabel
     Left = 464
     Height = 19
-    Top = 120
+    Top = 168
     Width = 136
     Caption = 'Tamanho dos blocos:'
   end
   object lblTB: TLabel
     Left = 616
     Height = 19
-    Top = 120
+    Top = 168
     Width = 25
     Caption = '0 m'
   end
   object Bevel1: TBevel
     Left = 16
     Height = 8
-    Top = 56
+    Top = 104
     Width = 785
   end
   object Bevel2: TBevel
     Left = 16
     Height = 8
-    Top = 152
+    Top = 200
     Width = 785
   end
   object Label7: TLabel
     Left = 32
     Height = 19
-    Top = 216
+    Top = 264
     Width = 202
     Caption = 'Densidade do explosivo (g/cm³)'
   end
   object Label8: TLabel
     Left = 32
     Height = 19
-    Top = 256
+    Top = 304
     Width = 229
     Caption = 'Densidade da rocha (g/cm³ ou t/m³)'
   end
   object edtDensidadeExplosivo: TEdit
     Left = 304
     Height = 36
-    Top = 208
+    Top = 256
     Width = 80
     TabOrder = 6
     Text = '0.85'
@@ -155,113 +155,128 @@ object Form1: TForm1
   object edtDensidadeDaRocha: TEdit
     Left = 304
     Height = 36
-    Top = 248
+    Top = 296
     Width = 80
     TabOrder = 7
     Text = '2.7'
   end
   object Label9: TLabel
-    Left = 408
+    Left = 440
     Height = 19
-    Top = 216
+    Top = 264
     Width = 88
     Caption = 'Afastamento:'
   end
   object lblAfastamento: TLabel
-    Left = 512
+    Left = 544
     Height = 19
-    Top = 216
+    Top = 264
     Width = 25
     Caption = '0 m'
   end
   object Label10: TLabel
     Left = 32
     Height = 19
-    Top = 296
+    Top = 344
     Width = 141
     Caption = 'Altura da bancada (m)'
   end
   object edtAlturaBancada: TEdit
     Left = 304
     Height = 36
-    Top = 288
+    Top = 336
     Width = 80
     TabOrder = 8
     Text = '15'
   end
   object Label11: TLabel
-    Left = 408
+    Left = 440
     Height = 19
-    Top = 296
+    Top = 344
     Width = 99
     Caption = 'Fragmentação:'
   end
   object lblFragmentacao: TLabel
-    Left = 520
+    Left = 552
     Height = 1
-    Top = 296
+    Top = 344
     Width = 1
   end
   object Label12: TLabel
-    Left = 608
+    Left = 640
     Height = 19
-    Top = 296
+    Top = 304
     Width = 60
     Caption = 'Bancada:'
   end
   object lblBancada: TLabel
-    Left = 680
+    Left = 712
     Height = 1
-    Top = 296
+    Top = 304
     Width = 1
   end
   object Label13: TLabel
-    Left = 408
+    Left = 440
     Height = 19
-    Top = 256
+    Top = 304
     Width = 93
     Caption = 'Espaçamento:'
   end
   object lblEspacamento: TLabel
-    Left = 512
+    Left = 544
     Height = 19
-    Top = 256
+    Top = 304
     Width = 25
     Caption = '0 m'
   end
   object Label14: TLabel
-    Left = 568
+    Left = 640
     Height = 19
-    Top = 256
+    Top = 264
     Width = 100
     Caption = 'Subperfuração:'
   end
   object lblSubperfuracao: TLabel
-    Left = 680
+    Left = 752
     Height = 19
-    Top = 256
+    Top = 264
     Width = 25
     Caption = '0 m'
   end
   object Label15: TLabel
-    Left = 408
+    Left = 32
     Height = 19
-    Top = 176
+    Top = 64
     Width = 40
     Caption = 'Rocha'
   end
   object CmbBxRocha: TComboBox
-    Left = 464
+    Left = 168
     Height = 36
-    Top = 168
-    Width = 204
+    Top = 56
+    Width = 256
     ItemHeight = 0
     TabOrder = 9
     Text = 'CmbBxRocha'
   end
+  object Bevel3: TBevel
+    Left = 24
+    Height = 8
+    Top = 392
+    Width = 785
+  end
+  object ScrllBrDiametroPerfuracao: TScrollBar
+    Left = 408
+    Height = 13
+    Top = 224
+    Width = 360
+    PageSize = 0
+    TabOrder = 10
+    OnChange = ScrllBrDiametroPerfuracaoChange
+  end
   object MainMenu1: TMainMenu
     Left = 720
-    Top = 88
+    Top = 136
     object MenuItem1: TMenuItem
       Caption = 'Arquivo'
       object MenuItem2: TMenuItem

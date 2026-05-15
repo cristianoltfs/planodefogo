@@ -16,6 +16,7 @@ type
 
     Bevel1: TBevel;
     Bevel2: TBevel;
+    Bevel3: TBevel;
 
     btnSair: TButton;
     btnCalcular: TButton;
@@ -58,11 +59,13 @@ type
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
+    ScrllBrDiametroPerfuracao: TScrollBar;
 
     procedure btnCalcularClick(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
+    procedure ScrllBrDiametroPerfuracaoChange(Sender: TObject);
 
   private
 
@@ -119,10 +122,20 @@ begin
   CmbBxRocha.Items.Add('Outra');
   CmbBxRocha.ItemIndex := 0;
 
+  ScrllBrDiametroPerfuracao.Min := 20;
+  ScrllBrDiametroPerfuracao.Max := 400;
+  ScrllBrDiametroPerfuracao.Position := 102; // valor inicial
+  ScrllBrDiametroPerfuracao.SmallChange := 1; // sesta move 1mm
+  ScrllBrDiametroPerfuracao.LargeChange := 1; // clique na barra move 1mm
+
+  edtDiametroPerfuracao.Text := IntToStr(ScrllBrDiametroPerfuracao.Position);
+
 end;
 
 procedure TForm1.btnCalcularClick(Sender: TObject);
 begin
+
+  try
 
   // cálculo da resistência à tração em relação à compressão
   if edtRC.Text <> ''
@@ -197,13 +210,27 @@ begin
   // cálculo da subperfuração
   subperfuracao := 0.3 * afastamento;
   str(subperfuracao:0:1, subperfuracaoStr);
-  lblSubperfuracao.Caption := subperfuracaoStr;
+  lblSubperfuracao.Caption := subperfuracaoStr + ' m';
 
+  except
+    on E : Exception do
+      ShowMessage('Erro de Cálculo: ' + E.Message);
+
+  end;
 end;
 
 procedure TForm1.MenuItem2Click(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TForm1.ScrllBrDiametroPerfuracaoChange(Sender: TObject);
+begin
+
+  edtDiametroPerfuracao.Text := IntToStr(ScrllBrDiametroPerfuracao.Position);
+
+  btnCalcularClick(Sender);
+
 end;
 
 end.
