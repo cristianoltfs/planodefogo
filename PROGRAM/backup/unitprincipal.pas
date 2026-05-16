@@ -21,6 +21,7 @@ type
     btnSair: TButton;
     btnCalcular: TButton;
     CmbBxRocha: TComboBox;
+    edtInclinacaoFuro: TEdit;
     edtAlturaBancada: TEdit;
 
 
@@ -38,6 +39,11 @@ type
     Label13: TLabel;
     Label14: TLabel;
     Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    lblProfundidadeFuro: TLabel;
     lblFragRuim: TLabel;
     lblFragRegular: TLabel;
     lblFragBoa: TLabel;
@@ -101,6 +107,10 @@ type
 
     subperfuracao : real;
     subperfuracaoStr : string;
+
+    profundidadeFuro : real;
+    profundidadeFuroStr : string;
+    inclinacaoFuro : real;  //  inclinação do furo em graus
 
   end;
 
@@ -218,13 +228,20 @@ begin
   str(subperfuracao:0:1, subperfuracaoStr);
   lblSubperfuracao.Caption := subperfuracaoStr + ' m';
 
+  // Profundidade do furo
+  inclinacaoFuro := StrToFloat(edtInclinacaoFuro.Text);
+  profundidadeFuro := (alturaBancada / Cos(DegToRad(inclinacaoFuro))) + ((1 - inclinacaoFuro / 100) * subperfuracao);
+  str(profundidadeFuro:0:1, profundidadeFuroStr);
+  lblProfundidadeFuro.Caption := profundidadeFuroStr;
+
+  AtualizarFragmentacao(fragmentacao);
+
   except
     on E : Exception do
       ShowMessage('Erro de Cálculo: ' + E.Message);
 
   end;
 
-  AtualizarFragmentacao(fragmentacao);
 
 end;
 
@@ -249,6 +266,7 @@ var
   cores: array[0..3] of TColor;
   i: integer;
 begin
+
   labels[0] := lblFragRuim;
   labels[1] := lblFragRegular;
   labels[2] := lblFragBoa;
