@@ -43,6 +43,8 @@ type
     Label17: TLabel;
     Label18: TLabel;
     Label19: TLabel;
+    Label20: TLabel;
+    lblDiametroTampao: TLabel;
     lblProfundidadeFuro: TLabel;
     lblFragRuim: TLabel;
     lblFragRegular: TLabel;
@@ -111,6 +113,9 @@ type
     profundidadeFuro : real;
     profundidadeFuroStr : string;
     inclinacaoFuro : real;  //  inclinação do furo em graus
+
+    diametroTampao : real;
+    diametroTampaoStr : string;
 
   end;
 
@@ -232,7 +237,13 @@ begin
   inclinacaoFuro := StrToFloat(edtInclinacaoFuro.Text);
   profundidadeFuro := (alturaBancada / Cos(DegToRad(inclinacaoFuro))) + ((1 - inclinacaoFuro / 100) * subperfuracao);
   str(profundidadeFuro:0:1, profundidadeFuroStr);
-  lblProfundidadeFuro.Caption := profundidadeFuroStr;
+  lblProfundidadeFuro.Caption := profundidadeFuroStr + ' m';
+
+  // Diâmtro do tampão
+  diametroTampao := diametroPerfuracao / 20;
+  str(diametroTampao:0:1, diametroTampaoStr);
+  lblDiametroTampao.Caption := diametroTampaoStr;
+
 
   AtualizarFragmentacao(fragmentacao);
 

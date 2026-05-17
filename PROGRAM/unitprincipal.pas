@@ -114,6 +114,9 @@ type
     profundidadeFuroStr : string;
     inclinacaoFuro : real;  //  inclinação do furo em graus
 
+    diametroTampao : real;
+    diametroTampaoStr : string;
+
   end;
 
 var
@@ -234,7 +237,13 @@ begin
   inclinacaoFuro := StrToFloat(edtInclinacaoFuro.Text);
   profundidadeFuro := (alturaBancada / Cos(DegToRad(inclinacaoFuro))) + ((1 - inclinacaoFuro / 100) * subperfuracao);
   str(profundidadeFuro:0:1, profundidadeFuroStr);
-  lblProfundidadeFuro.Caption := profundidadeFuroStr;
+  lblProfundidadeFuro.Caption := profundidadeFuroStr + ' m';
+
+  // Diâmtro do tampão
+  diametroTampao := diametroPerfuracao / 20;
+  str(diametroTampao:0:1, diametroTampaoStr);
+  lblDiametroTampao.Caption := diametroTampaoStr + ' m';
+
 
   AtualizarFragmentacao(fragmentacao);
 
