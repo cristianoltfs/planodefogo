@@ -46,6 +46,8 @@ type
     Label20: TLabel;
     Label21: TLabel;
     Label23: TLabel;
+    Label24: TLabel;
+    lblRazaoLinearCarregamento: TLabel;
     lblPerfuracaoEspecifica: TLabel;
     lblVolumeDeRochaPorFuro: TLabel;
     Label22: TLabel;
@@ -83,6 +85,7 @@ type
     procedure btnSairClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
+    procedure MenuItem4Click(Sender: TObject);
     procedure ScrllBrDiametroPerfuracaoChange(Sender: TObject);
 
     procedure AtualizarFragmentacao(frag: string);
@@ -131,6 +134,9 @@ type
 
     perfuracaoEspecifica : real;
     perfuracaoEspecificaStr : string;
+
+    razaoLinearCarregamento : real;
+    razaoLinearCarregamentoStr : string;
 
   end;
 
@@ -281,6 +287,11 @@ begin
   str(perfuracaoEspecifica:0:2, perfuracaoEspecificaStr);
   lblPerfuracaoEspecifica.Caption := perfuracaoEspecificaStr;
 
+  // razão linear de carregamento
+  razaoLinearCarregamento := profundidadeFuro / volumeRochaPorFuro;
+  str(razaoLinearCarregamento:0:2, razaoLinearCarregamentoStr);
+  lblRazaoLinearCarregamento.Caption := razaoLinearCarregamentoStr;
+
   AtualizarFragmentacao(fragmentacao);
 
   except
@@ -295,6 +306,11 @@ end;
 procedure TForm1.MenuItem2Click(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TForm1.MenuItem4Click(Sender: TObject);
+begin
+  frmSobre.ShowModal; //  abre como janela modal (bloqueia a principal)
 end;
 
 procedure TForm1.ScrllBrDiametroPerfuracaoChange(Sender: TObject);

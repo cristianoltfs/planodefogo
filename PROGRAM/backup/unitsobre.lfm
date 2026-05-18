@@ -11,46 +11,46 @@ object frmSobre: TfrmSobre
   Position = poScreenCenter
   LCLVersion = '4.6.0.0'
   object lblPlanfogo: TLabel
-    Left = 344
+    Left = 366
     Height = 19
-    Top = 56
+    Top = 32
     Width = 61
     Caption = 'PlanFogo'
   end
   object lblAutor: TLabel
-    Left = 152
+    Left = 248
     Height = 19
-    Top = 152
+    Top = 112
     Width = 296
     Caption = 'Autor: Cristiano Luís Turbino de França e Silva'
   end
   object lblVersao: TLabel
-    Left = 339
+    Left = 360
     Height = 19
-    Top = 96
+    Top = 72
     Width = 72
     Caption = 'Versão: 0.1'
   end
   object lblDescricao: TLabel
-    Left = 296
+    Left = 285
     Height = 19
-    Top = 264
+    Top = 192
     Width = 223
     Caption = 'Programa feito como projeto final '
   end
   object btnFechar: TButton
-    Left = 336
+    Left = 352
     Height = 25
-    Top = 320
+    Top = 312
     Width = 75
     Caption = 'Fechar'
     TabOrder = 0
     OnClick = btnFecharClick
   end
   object lblEmail: TLabel
-    Left = 200
+    Left = 290
     Height = 19
-    Top = 192
+    Top = 152
     Width = 213
     Caption = 'E-mail: cristianoltfs@gmail.com'
   end

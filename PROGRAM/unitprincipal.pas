@@ -46,6 +46,8 @@ type
     Label20: TLabel;
     Label21: TLabel;
     Label23: TLabel;
+    Label24: TLabel;
+    lblRazaoLinearCarregamento: TLabel;
     lblPerfuracaoEspecifica: TLabel;
     lblVolumeDeRochaPorFuro: TLabel;
     Label22: TLabel;
@@ -132,6 +134,9 @@ type
 
     perfuracaoEspecifica : real;
     perfuracaoEspecificaStr : string;
+
+    razaoLinearCarregamento : real;
+    razaoLinearCarregamentoStr : string;
 
   end;
 
@@ -281,6 +286,11 @@ begin
   perfuracaoEspecifica := profundidadeFuro / volumeRochaPorFuro;
   str(perfuracaoEspecifica:0:2, perfuracaoEspecificaStr);
   lblPerfuracaoEspecifica.Caption := perfuracaoEspecificaStr;
+
+  // razão linear de carregamento
+  razaoLinearCarregamento := 0.000785 * densidadeExplosivo * diametroPerfuracao;
+  str(razaoLinearCarregamento:0:2, razaoLinearCarregamentoStr);
+  lblRazaoLinearCarregamento.Caption := razaoLinearCarregamentoStr;
 
   AtualizarFragmentacao(fragmentacao);
 

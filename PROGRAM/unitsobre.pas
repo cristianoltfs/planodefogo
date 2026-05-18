@@ -13,6 +13,8 @@ type
 
   TfrmSobre = class(TForm)
     btnFechar: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
     lblPlanfogo: TLabel;
     lblVersao: TLabel;
     lblAutor: TLabel;
