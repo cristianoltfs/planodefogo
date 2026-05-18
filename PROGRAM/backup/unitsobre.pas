@@ -5,7 +5,7 @@ unit unitSobre;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls;
 
 type
 
@@ -13,11 +13,13 @@ type
 
   TfrmSobre = class(TForm)
     btnFechar: TButton;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
+    lblPlanfogo: TLabel;
+    lblVersao: TLabel;
+    lblAutor: TLabel;
+    lblDescricao: TLabel;
+    lblEmail: TLabel;
     procedure btnFecharClick(Sender: TObject);
+
   private
 
   public
@@ -37,6 +39,7 @@ procedure TfrmSobre.btnFecharClick(Sender: TObject);
 begin
   close;
 end;
+
 
 end.
 

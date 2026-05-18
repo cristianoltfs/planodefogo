@@ -1,49 +1,57 @@
 object frmSobre: TfrmSobre
-  Left = 2906
-  Height = 349
-  Top = 572
-  Width = 719
+  Left = 2482
+  Height = 380
+  Top = 322
+  Width = 800
+  Align = alTop
   BorderStyle = bsDialog
-  Caption = 'Sobre'
-  ClientHeight = 349
-  ClientWidth = 719
+  Caption = 'Sobre PlanFogo'
+  ClientHeight = 380
+  ClientWidth = 800
   Position = poScreenCenter
   LCLVersion = '4.6.0.0'
-  object Label1: TLabel
-    Left = 328
+  object lblPlanfogo: TLabel
+    Left = 344
     Height = 19
-    Top = 32
+    Top = 56
     Width = 61
     Caption = 'PlanFogo'
   end
-  object Label2: TLabel
-    Left = 49
+  object lblAutor: TLabel
+    Left = 152
     Height = 19
-    Top = 80
-    Width = 72
-    Caption = 'Versão: 0.1'
-  end
-  object Label3: TLabel
-    Left = 49
-    Height = 19
-    Top = 112
+    Top = 152
     Width = 296
     Caption = 'Autor: Cristiano Luís Turbino de França e Silva'
   end
-  object Label4: TLabel
-    Left = 49
+  object lblVersao: TLabel
+    Left = 339
     Height = 19
-    Top = 144
+    Top = 96
+    Width = 72
+    Caption = 'Versão: 0.1'
+  end
+  object lblDescricao: TLabel
+    Left = 296
+    Height = 19
+    Top = 264
     Width = 223
     Caption = 'Programa feito como projeto final '
   end
   object btnFechar: TButton
-    Left = 320
+    Left = 336
     Height = 25
-    Top = 237
+    Top = 320
     Width = 75
     Caption = 'Fechar'
     TabOrder = 0
     OnClick = btnFecharClick
+  end
+  object lblEmail: TLabel
+    Left = 200
+    Height = 19
+    Top = 192
+    Width = 213
+    Caption = 'E-mail: cristianoltfs@gmail.com'
   end
 end
