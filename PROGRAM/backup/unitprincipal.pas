@@ -15,7 +15,6 @@ type
   TForm1 = class(TForm)
 
     Bevel1: TBevel;
-    Bevel2: TBevel;
     Bevel3: TBevel;
 
     btnSair: TButton;
@@ -48,6 +47,10 @@ type
     Label23: TLabel;
     Label24: TLabel;
     Label25: TLabel;
+    Label26: TLabel;
+    Label27: TLabel;
+    lblAlturaCargaExplosivo: TLabel;
+    lblAlturaCargaColunaExplosivo: TLabel;
     lblAlturaCargaFundo: TLabel;
     lblRazaoLinearCarregamento: TLabel;
     lblPerfuracaoEspecifica: TLabel;
@@ -142,6 +145,12 @@ type
 
     alturaCargaFundo : real;
     alturaCargaFundoStr : string;
+
+    alturaCargaColuna : real;
+    alturaCargaColunaStr : string;
+
+    alturaCargaExplosivo : real;
+    alturaCargaExplosivoStr : string;
 
   end;
 
@@ -290,17 +299,27 @@ begin
   // perfuração específica
   perfuracaoEspecifica := profundidadeFuro / volumeRochaPorFuro;
   str(perfuracaoEspecifica:0:2, perfuracaoEspecificaStr);
-  lblPerfuracaoEspecifica.Caption := perfuracaoEspecificaStr;
+  lblPerfuracaoEspecifica.Caption := perfuracaoEspecificaStr + ' m/t';
 
   // razão linear de carregamento
-  razaoLinearCarregamento := 0.000785 * densidadeExplosivo * diametroPerfuracao;
+  razaoLinearCarregamento := 0.000785 * densidadeExplosivo * (diametroPerfuracao * diametroPerfuracao);
   str(razaoLinearCarregamento:0:2, razaoLinearCarregamentoStr);
-  lblRazaoLinearCarregamento.Caption := razaoLinearCarregamentoStr;
+  lblRazaoLinearCarregamento.Caption := razaoLinearCarregamentoStr + ' kg/m';
 
-  // altura da carga de fundo
-  alturaCargaFundo := 0.3;
+  // altura da carga de fundo de explosivo
+  alturaCargaFundo := 0.3 * ( profundidadeFuro - alturaTampao );
   str(alturaCargaFundo:0:2, alturaCargaFundoStr);
-  lblAlturaCargaFundo.Caption := alturaCargaFundoStr;
+  lblAlturaCargaFundo.Caption := alturaCargaFundoStr + ' m';
+
+  // altura da carga de coluna de explosivo
+  alturaCargaColuna := (profundidadeFuro - alturaTampao) - alturaCargaFundo;
+  str(alturaCargaColuna:0:2, alturaCargaColunaStr);
+  lblAlturaCargaColunaExplosivo.Caption := alturaCargaColunaStr + ' m';
+
+  // altura da carga de coluna de explosivo
+  alturaCargaExplosivo := alturaCargaFundo + alturaCargaColuna;
+  str(alturaCargaExplosivo:0:2, alturaCargaExplosivoStr);
+  lblAlturaCargaExplosivo.Caption := alturaCargaExplosivoStr + ' m';
 
   AtualizarFragmentacao(fragmentacao);
 

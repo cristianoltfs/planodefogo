@@ -11,7 +11,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="73"/>
+        <UsageCount Value="77"/>
       </Unit>
       <Unit>
         <Filename Value="unitprincipal.pas"/>
@@ -21,9 +21,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitPrincipal"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="290"/>
-        <CursorPos X="64" Y="301"/>
-        <UsageCount Value="73"/>
+        <TopLine Value="296"/>
+        <CursorPos X="66" Y="302"/>
+        <UsageCount Value="77"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -36,36 +36,12 @@
         <EditorIndex Value="1"/>
         <TopLine Value="7"/>
         <CursorPos X="79" Y="19"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="unitprincipal.pas"/>
-        <Caret Line="258" Column="3" TopLine="245"/>
-      </Position>
-      <Position>
-        <Filename Value="unitprincipal.pas"/>
-        <Caret Line="257" Column="3" TopLine="244"/>
-      </Position>
-      <Position>
-        <Filename Value="unitprincipal.pas"/>
-        <Caret Line="264" Column="65" TopLine="244"/>
-      </Position>
-      <Position>
-        <Filename Value="unitprincipal.pas"/>
-        <Caret Line="265" Column="65" TopLine="245"/>
-      </Position>
-      <Position>
-        <Filename Value="unitprincipal.pas"/>
-        <Caret Line="272" Column="34" TopLine="262"/>
-      </Position>
-      <Position>
-        <Filename Value="unitprincipal.pas"/>
-        <Caret Line="273" Column="34" TopLine="263"/>
-      </Position>
       <Position>
         <Filename Value="unitprincipal.pas"/>
         <Caret Line="280" Column="64" TopLine="271"/>
@@ -160,6 +136,30 @@
       <Position>
         <Filename Value="unitprincipal.pas"/>
         <Caret Line="292" Column="81" TopLine="279"/>
+      </Position>
+      <Position>
+        <Filename Value="unitprincipal.pas"/>
+        <Caret Line="301" Column="64" TopLine="290"/>
+      </Position>
+      <Position>
+        <Filename Value="unitprincipal.pas"/>
+        <Caret Line="302" Column="43" TopLine="286"/>
+      </Position>
+      <Position>
+        <Filename Value="unitprincipal.pas"/>
+        <Caret Line="305" Column="60" TopLine="279"/>
+      </Position>
+      <Position>
+        <Filename Value="unitprincipal.pas"/>
+        <Caret Line="311" Column="58" TopLine="296"/>
+      </Position>
+      <Position>
+        <Filename Value="unitprincipal.pas"/>
+        <Caret Line="303" Column="66" TopLine="297"/>
+      </Position>
+      <Position>
+        <Filename Value="unitprincipal.pas"/>
+        <Caret Line="302" Column="66" TopLine="296"/>
       </Position>
     </JumpHistory>
     <RunParams>
