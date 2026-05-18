@@ -45,6 +45,8 @@ type
     Label19: TLabel;
     Label20: TLabel;
     Label21: TLabel;
+    Label23: TLabel;
+    lblPerfuracaoEspecifica: TLabel;
     lblVolumeDeRochaPorFuro: TLabel;
     Label22: TLabel;
     lblAlturaTampao: TLabel;
@@ -126,6 +128,9 @@ type
 
     volumeRochaPorFuro : real;
     volumeRochaPorFuroStr : string;
+
+    perfuracaoEspecifica : real;
+    perfuracaoEspecificaStr : string;
 
   end;
 
@@ -266,10 +271,15 @@ begin
     lblRiscoAlturaTampao.Caption := 'Produção de mais matacões. Lançamento menor!';
   }
 
-    // altura do tampão
+  // altura do tampão
   volumeRochaPorFuro := alturaBancada * afastamento * espacamento;
   str(volumeRochaPorFuro:0:1, volumeRochaPorFuroStr);
   lblVolumeDeRochaPorFuro.Caption := volumeRochaPorFuroStr + ' m³';
+
+  // perfuração específica
+  perfuracaoEspecifica := profundidadeFuro / volumeRochaPorFuro;
+  str(perfuracaoEspecifica:0:2, perfuracaoEspecificaStr);
+  lblPerfuracaoEspecifica.Caption := perfuracaoEspecificaStr;
 
   AtualizarFragmentacao(fragmentacao);
 

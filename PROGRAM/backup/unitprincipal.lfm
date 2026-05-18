@@ -417,6 +417,22 @@ object Form1: TForm1
     ParentColor = False
     Transparent = False
   end
+  object Label23: TLabel
+    Left = 440
+    Height = 19
+    Top = 608
+    Width = 146
+    Caption = 'Perfuração específica:'
+  end
+  object lblPerfuracaoEspecifica: TLabel
+    Left = 600
+    Height = 1
+    Top = 608
+    Width = 1
+    Color = clWhite
+    ParentColor = False
+    Transparent = False
+  end
   object MainMenu1: TMainMenu
     Left = 720
     Top = 136
