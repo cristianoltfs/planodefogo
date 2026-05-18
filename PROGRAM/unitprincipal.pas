@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus,
-  ExtCtrls, Math;
+  ExtCtrls, Math, unitSobre;
 
 type
 
@@ -83,6 +83,7 @@ type
     procedure btnSairClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
+    procedure MenuItem4Click(Sender: TObject);
     procedure ScrllBrDiametroPerfuracaoChange(Sender: TObject);
 
     procedure AtualizarFragmentacao(frag: string);
@@ -295,6 +296,11 @@ end;
 procedure TForm1.MenuItem2Click(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TForm1.MenuItem4Click(Sender: TObject);
+begin
+  frmSobre.ShowModal; //  abre como janela modal (bloqueia a principal)
 end;
 
 procedure TForm1.ScrllBrDiametroPerfuracaoChange(Sender: TObject);
