@@ -44,6 +44,10 @@ type
     Label18: TLabel;
     Label19: TLabel;
     Label20: TLabel;
+    Label21: TLabel;
+    lblVolumeDeRochaPorFuro: TLabel;
+    Label22: TLabel;
+    lblAlturaTampao: TLabel;
     lblDiametroTampao: TLabel;
     lblProfundidadeFuro: TLabel;
     lblFragRuim: TLabel;
@@ -116,6 +120,12 @@ type
 
     diametroTampao : real;
     diametroTampaoStr : string;
+
+    alturaTampao : real;
+    alturaTampaoStr : string;
+
+    volumeRochaPorFuro : real;
+    volumeRochaPorFuroStr : string;
 
   end;
 
@@ -244,6 +254,22 @@ begin
   str(diametroTampao:0:1, diametroTampaoStr);
   lblDiametroTampao.Caption := diametroTampaoStr + ' m';
 
+  // altura do tampão
+  alturaTampao := 0.7 * afastamento;
+  str(alturaTampao:0:1, alturaTampaoStr);
+  lblAlturaTampao.Caption := alturaTampaoStr + ' m';
+  {
+  if alturaTampao < afastamento
+  then
+    lblRiscoAlturaTampao.Caption := 'Risco de ultralançamento da superfície mais alta!'
+  else
+    lblRiscoAlturaTampao.Caption := 'Produção de mais matacões. Lançamento menor!';
+  }
+
+    // altura do tampão
+  volumeRochaPorFuro := alturaBancada * afastamento * espacamento;
+  str(volumeRochaPorFuro:0:1, volumeRochaPorFuroStr);
+  lblVolumeDeRochaPorFuro.Caption := volumeRochaPorFuroStr + ' m³';
 
   AtualizarFragmentacao(fragmentacao);
 
