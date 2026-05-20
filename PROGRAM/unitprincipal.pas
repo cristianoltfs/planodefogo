@@ -19,6 +19,7 @@ type
 
     btnSair: TButton;
     btnCalcular: TButton;
+    Button1: TButton;
     CmbBxRocha: TComboBox;
     edtInclinacaoFuro: TEdit;
     edtAlturaBancada: TEdit;
