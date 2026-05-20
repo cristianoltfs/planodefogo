@@ -45,6 +45,7 @@
         <Filename Value="unitsobre.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmSobre"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitSobre"/>
       </Unit>

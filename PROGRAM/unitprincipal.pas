@@ -277,7 +277,7 @@ begin
   // Diâmtro do tampão
   diametroTampao := diametroPerfuracao / 20;
   str(diametroTampao:0:1, diametroTampaoStr);
-  lblDiametroTampao.Caption := diametroTampaoStr + ' m';
+  lblDiametroTampao.Caption := diametroTampaoStr;
 
   // altura do tampão
   alturaTampao := 0.7 * afastamento;
