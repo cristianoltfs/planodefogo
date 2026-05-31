@@ -506,6 +506,7 @@ object Form1: TForm1
     Width = 75
     Caption = 'Limpar'
     TabOrder = 12
+    OnClick = Button1Click
   end
   object MainMenu1: TMainMenu
     Left = 104

@@ -89,6 +89,7 @@ type
 
     procedure btnCalcularClick(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
     procedure MenuItem4Click(Sender: TObject);
@@ -167,6 +168,39 @@ implementation
 procedure TForm1.btnSairClick(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+
+  edtRC.Caption := '';
+  edtAD.Caption := '';
+  edtCC.Caption := '';
+  edtAlturaBancada.Caption := '';
+  edtDensidadeDaRocha.Caption := '';
+  edtDensidadeExplosivo.Caption := '';
+  edtDiametroPerfuracao.Caption := '';
+  edtInclinacaoFuro.Caption := '';
+  lblAlturaCargaColunaExplosivo.Caption:='';
+  lblAfastamento.Caption:='';
+  lblAlturaCargaExplosivo.Caption:='';
+  lblAlturaCargaFundo.Caption:='';
+  lblAlturaTampao.Caption:='';
+  lblBancada.Caption:='';
+  lblAlturaCargaColunaExplosivo.Caption:='';
+  lblAfastamento.Caption:='';
+  lblAlturaCargaFundo.Caption:='';
+  lblAlturaTampao.Caption:='';
+  lblRT.Caption:='';
+  lblVolumeDeRochaPorFuro.Caption:='';
+  lblTB.Caption:='';
+  lblPerfuracaoEspecifica.Caption:='';
+  lblSubperfuracao.Caption:='';
+  lblEspacamento.Caption:='';
+  lblProfundidadeFuro.Caption:='';
+  lblDiametroTampao.Caption:='';
+  lblRazaoLinearCarregamento.Caption:='';
+
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
@@ -275,7 +309,7 @@ begin
   str(profundidadeFuro:0:1, profundidadeFuroStr);
   lblProfundidadeFuro.Caption := profundidadeFuroStr + ' m';
 
-  // Diâmtro do tampão
+  // ótimo tamanho do material do tampão (granulometria)
   diametroTampao := diametroPerfuracao / 20;
   str(diametroTampao:0:1, diametroTampaoStr);
   lblDiametroTampao.Caption := diametroTampaoStr;
