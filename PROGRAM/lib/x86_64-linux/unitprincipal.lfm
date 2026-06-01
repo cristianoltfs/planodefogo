@@ -1,19 +1,19 @@
 object Form1: TForm1
-  Left = 2420
-  Height = 629
-  Top = 186
-  Width = 802
+  Left = 2360
+  Height = 656
+  Top = 167
+  Width = 1443
   Caption = 'PlanFogo v0.1'
-  ClientHeight = 629
-  ClientWidth = 802
+  ClientHeight = 656
+  ClientWidth = 1443
   Menu = MainMenu1
   LCLVersion = '4.6.0.0'
   OnCreate = FormCreate
   object btnSair: TButton
-    Left = 704
-    Height = 25
-    Top = 592
-    Width = 75
+    Left = 608
+    Height = 41
+    Top = 600
+    Width = 91
     Caption = '&Sair'
     TabOrder = 0
     OnClick = btnSairClick
@@ -52,10 +52,10 @@ object Form1: TForm1
     Transparent = False
   end
   object btnCalcular: TButton
-    Left = 528
-    Height = 25
-    Top = 592
-    Width = 75
+    Left = 32
+    Height = 41
+    Top = 600
+    Width = 91
     Caption = 'Calcular'
     TabOrder = 2
     OnClick = btnCalcularClick
@@ -73,7 +73,7 @@ object Form1: TForm1
     Top = 168
     Width = 80
     TabOrder = 3
-    Text = '102'
+    Text = '25'
   end
   object Label4: TLabel
     Left = 424
@@ -500,13 +500,72 @@ object Form1: TForm1
     Transparent = False
   end
   object Button1: TButton
-    Left = 616
-    Height = 25
-    Top = 592
-    Width = 75
-    Caption = 'Limpar'
+    Left = 144
+    Height = 41
+    Top = 600
+    Width = 114
+    Caption = 'Limpar dados'
     TabOrder = 12
     OnClick = Button1Click
+  end
+  object Chart1: TChart
+    Left = 800
+    Height = 584
+    Top = 24
+    Width = 608
+    AxisList = <    
+      item
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelFont.Orientation = 900
+        Title.Visible = True
+        Title.Caption = 'Afastamento (m)'
+        Title.LabelBrush.Style = bsClear
+      end    
+      item
+        Alignment = calBottom
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.Visible = True
+        Title.Caption = 'Diâmetro de perfuração (mm)'
+        Title.LabelBrush.Style = bsClear
+      end>
+    Extent.UseXMax = True
+    Extent.UseXMin = True
+    Extent.UseYMin = True
+    Extent.XMax = 250
+    Title.Text.Strings = (
+      'Gráfico do Diâmetro de perfuração vs Afastamento'
+    )
+    Title.Visible = True
+    ParentShowHint = False
+    object Chart1LineSeries1: TLineSeries
+      LineType = ltNone
+      Pointer.Brush.Color = clBlack
+      Pointer.HorizSize = 5
+      Pointer.Pen.Color = clBlack
+      Pointer.Style = psCircle
+      Pointer.Visible = True
+      ShowPoints = True
+    end
+  end
+  object btnLimparGrafico: TButton
+    Left = 280
+    Height = 41
+    Top = 600
+    Width = 120
+    Caption = 'Limpar Gráfico'
+    TabOrder = 14
+    OnClick = btnLimparGraficoClick
+  end
+  object btnPreencherAutomatico: TButton
+    Left = 416
+    Height = 41
+    Top = 600
+    Width = 169
+    Caption = 'Preencher automático'
+    TabOrder = 15
+    OnClick = btnPreencherAutomaticoClick
   end
   object MainMenu1: TMainMenu
     Left = 104

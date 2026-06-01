@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus,
-  ExtCtrls, Math, unitSobre;
+  ExtCtrls, TAGraph, TASeries, Math, unitSobre;
 
 type
 
@@ -20,7 +20,12 @@ type
     btnSair: TButton;
     btnCalcular: TButton;
     Button1: TButton;
+    btnLimparGrafico: TButton;
+    btnPreencherAutomatico: TButton;
+    Chart1: TChart;
+    Chart1LineSeries1: TLineSeries;
     CmbBxRocha: TComboBox;
+
     edtInclinacaoFuro: TEdit;
     edtAlturaBancada: TEdit;
 
@@ -88,14 +93,17 @@ type
     ScrllBrDiametroPerfuracao: TScrollBar;
 
     procedure btnCalcularClick(Sender: TObject);
+    procedure btnLimparGraficoClick(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure btnPreencherAutomaticoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
     procedure MenuItem4Click(Sender: TObject);
     procedure ScrllBrDiametroPerfuracaoChange(Sender: TObject);
 
     procedure AtualizarFragmentacao(frag: string);
+    procedure ConfigurarCoresGrafico(Cor: TColor);
 
   private
 
@@ -198,7 +206,21 @@ begin
   lblSubperfuracao.Caption:='';
   lblEspacamento.Caption:='';
   lblProfundidadeFuro.Caption:='';
+  lblDiametroTampao.Caption:='';
+  lblRazaoLinearCarregamento.Caption:='';
 
+end;
+
+procedure TForm1.btnPreencherAutomaticoClick(Sender: TObject);
+begin
+  edtRC.Caption := '250';
+  edtAD.Caption := '1.5';
+  edtCC.Caption := '4';
+  edtAlturaBancada.Caption := '15';
+  edtDensidadeDaRocha.Caption := '2.7';
+  edtDensidadeExplosivo.Caption := '0.85';
+  edtDiametroPerfuracao.Caption := '25';
+  edtInclinacaoFuro.Caption := '10';
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
@@ -211,13 +233,15 @@ begin
   CmbBxRocha.Items.Add('Outra');
   CmbBxRocha.ItemIndex := 0;
 
-  ScrllBrDiametroPerfuracao.Min := 20;
-  ScrllBrDiametroPerfuracao.Max := 500;
-  ScrllBrDiametroPerfuracao.Position := 102; // valor inicial
+  ScrllBrDiametroPerfuracao.Min := 25;
+  ScrllBrDiametroPerfuracao.Max := 250;
+  ScrllBrDiametroPerfuracao.Position := 25; // valor inicial
   ScrllBrDiametroPerfuracao.SmallChange := 1; // sesta move 1mm
   ScrllBrDiametroPerfuracao.LargeChange := 1; // clique na barra move 1mm
 
   edtDiametroPerfuracao.Text := IntToStr(ScrllBrDiametroPerfuracao.Position);
+
+  Chart1.LeftAxis.Range.Max := 10;
 
 end;
 
@@ -285,7 +309,6 @@ begin
   lblBancada.Caption := bancada;
 
   // cálculo do espaçamento
-
   if CmbBxRocha.ItemIndex = 0
     then espacamento := 2 * afastamento
     else if rc > 120
@@ -356,6 +379,8 @@ begin
 
   AtualizarFragmentacao(fragmentacao);
 
+  Chart1LineSeries1.AddXY(diametroPerfuracao, afastamento);
+
   except
     on E : Exception do
       ShowMessage('Erro de Cálculo: ' + E.Message);
@@ -364,6 +389,13 @@ begin
 
 
 end;
+
+procedure TForm1.btnLimparGraficoClick(Sender: TObject);
+begin
+  Chart1LineSeries1.Clear;
+end;
+
+
 
 procedure TForm1.MenuItem2Click(Sender: TObject);
 begin
@@ -390,6 +422,8 @@ var
   nomes: array[0..3] of string;
   cores: array[0..3] of TColor;
   i: integer;
+  corSelecionada: TColor;
+
 begin
 
   labels[0] := lblFragRuim;
@@ -415,6 +449,8 @@ begin
       labels[i].Font.Color := cores[i];
       labels[i].Transparent := False;
       labels[i].Color := clWhite;
+      corSelecionada := cores[i];
+
     end
     else
     begin
@@ -424,6 +460,22 @@ begin
       labels[i].Transparent := TRUE;
     end;
   end;
+    // ATUALIZAR AS CORES DO GRÁFICO
+  ConfigurarCoresGrafico(corSelecionada);
+end;
+
+// Procedimento para configurar as cores do gráfico
+procedure TForm1.ConfigurarCoresGrafico(Cor: TColor);
+begin
+  // Cor dos pontos
+  Chart1LineSeries1.Pointer.Brush.Color := Cor;
+  Chart1LineSeries1.Pointer.Pen.Color := Cor;
+
+  // Opcional: alterar também a cor da linha se estiver usando
+  // Chart1LineSeries1.SeriesColor := Cor;
+
+  // Forçar redesenho do gráfico
+  // Chart1.Invalidate;
 end;
 
 end.

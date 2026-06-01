@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus,
-  ExtCtrls, Math, unitSobre;
+  ExtCtrls, TAGraph, TASeries, Math, unitSobre;
 
 type
 
@@ -20,7 +20,12 @@ type
     btnSair: TButton;
     btnCalcular: TButton;
     Button1: TButton;
+    btnLimparGrafico: TButton;
+    btnPreencherAutomatico: TButton;
+    Chart1: TChart;
+    Chart1LineSeries1: TLineSeries;
     CmbBxRocha: TComboBox;
+
     edtInclinacaoFuro: TEdit;
     edtAlturaBancada: TEdit;
 
@@ -88,8 +93,10 @@ type
     ScrllBrDiametroPerfuracao: TScrollBar;
 
     procedure btnCalcularClick(Sender: TObject);
+    procedure btnLimparGraficoClick(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure btnPreencherAutomaticoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
     procedure MenuItem4Click(Sender: TObject);
@@ -203,6 +210,18 @@ begin
 
 end;
 
+procedure TForm1.btnPreencherAutomaticoClick(Sender: TObject);
+begin
+  edtRC.Caption := '250';
+  edtAD.Caption := '1.5';
+  edtCC.Caption := '4';
+  edtAlturaBancada.Caption := '15';
+  edtDensidadeDaRocha.Caption := '2.7';
+  edtDensidadeExplosivo.Caption := '0.85';
+  edtDiametroPerfuracao.Caption := '25';
+  edtInclinacaoFuro.Caption := '10';
+end;
+
 procedure TForm1.FormCreate(Sender: TObject);
 begin
 
@@ -213,13 +232,15 @@ begin
   CmbBxRocha.Items.Add('Outra');
   CmbBxRocha.ItemIndex := 0;
 
-  ScrllBrDiametroPerfuracao.Min := 20;
-  ScrllBrDiametroPerfuracao.Max := 500;
-  ScrllBrDiametroPerfuracao.Position := 102; // valor inicial
+  ScrllBrDiametroPerfuracao.Min := 25;
+  ScrllBrDiametroPerfuracao.Max := 250;
+  ScrllBrDiametroPerfuracao.Position := 25; // valor inicial
   ScrllBrDiametroPerfuracao.SmallChange := 1; // sesta move 1mm
   ScrllBrDiametroPerfuracao.LargeChange := 1; // clique na barra move 1mm
 
   edtDiametroPerfuracao.Text := IntToStr(ScrllBrDiametroPerfuracao.Position);
+
+  Chart1.LeftAxis.Range.Max := 10;
 
 end;
 
@@ -287,7 +308,6 @@ begin
   lblBancada.Caption := bancada;
 
   // cálculo do espaçamento
-
   if CmbBxRocha.ItemIndex = 0
     then espacamento := 2 * afastamento
     else if rc > 120
@@ -358,6 +378,8 @@ begin
 
   AtualizarFragmentacao(fragmentacao);
 
+  Chart1LineSeries1.AddXY(diametroPerfuracao, afastamento);
+
   except
     on E : Exception do
       ShowMessage('Erro de Cálculo: ' + E.Message);
@@ -366,6 +388,13 @@ begin
 
 
 end;
+
+procedure TForm1.btnLimparGraficoClick(Sender: TObject);
+begin
+  Chart1LineSeries1.Clear;
+end;
+
+
 
 procedure TForm1.MenuItem2Click(Sender: TObject);
 begin
@@ -427,6 +456,8 @@ begin
     end;
   end;
 end;
+
+
 
 end.
 
