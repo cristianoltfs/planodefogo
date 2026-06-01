@@ -55,6 +55,9 @@ type
     Label25: TLabel;
     Label26: TLabel;
     Label27: TLabel;
+    Label28: TLabel;
+    Label29: TLabel;
+    lblDiametroFuroExplosivo: TLabel;
     lblAlturaCargaExplosivo: TLabel;
     lblAlturaCargaColunaExplosivo: TLabel;
     lblAlturaCargaFundo: TLabel;
@@ -161,7 +164,9 @@ type
     alturaCargaExplosivo : real;
     alturaCargaExplosivoStr : string;
 
-    fragmentacaoAtual: string;
+    fragmentacaoAtual : string;
+
+    DiametroPerfuracaoStr : string;
 
   end;
 
@@ -383,7 +388,10 @@ begin
   str(alturaCargaExplosivo:0:2, alturaCargaExplosivoStr);
   lblAlturaCargaExplosivo.Caption := alturaCargaExplosivoStr + ' m';
 
-  AtualizarFragmentacao(fragmentacao);
+  AtualizarFragmentacao(fragmentacao); // usado para cores dos pontos no gráfico
+
+  str(diametroPerfuracao:0:2, DiametroPerfuracaoStr);
+  lblDiametroFuroExplosivo.Caption := DiametroPerfuracaoStr + ' mm';
 
 
   // Define a cor baseada na fragmentação atual

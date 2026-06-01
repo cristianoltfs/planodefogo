@@ -1,11 +1,11 @@
 object Form1: TForm1
-  Left = 2360
-  Height = 656
-  Top = 167
-  Width = 1443
+  Left = 2255
+  Height = 737
+  Top = 166
+  Width = 1476
   Caption = 'PlanFogo v0.1'
-  ClientHeight = 656
-  ClientWidth = 1443
+  ClientHeight = 737
+  ClientWidth = 1476
   Menu = MainMenu1
   LCLVersion = '4.6.0.0'
   OnCreate = FormCreate
@@ -281,10 +281,10 @@ object Form1: TForm1
     Width = 752
   end
   object ScrllBrDiametroPerfuracao: TScrollBar
-    Left = 424
+    Left = 888
     Height = 13
-    Top = 208
-    Width = 352
+    Top = 616
+    Width = 520
     PageSize = 0
     TabOrder = 10
     OnChange = ScrllBrDiametroPerfuracaoChange
@@ -334,7 +334,7 @@ object Form1: TForm1
   object Label18: TLabel
     Left = 424
     Height = 19
-    Top = 255
+    Top = 216
     Width = 156
     Caption = 'Inclinação do furo (grau)'
   end
@@ -348,7 +348,7 @@ object Form1: TForm1
   object edtInclinacaoFuro: TEdit
     Left = 696
     Height = 36
-    Top = 247
+    Top = 208
     Width = 80
     TabOrder = 11
     Text = '10'
@@ -512,7 +512,7 @@ object Form1: TForm1
     Left = 800
     Height = 584
     Top = 24
-    Width = 608
+    Width = 632
     AxisList = <    
       item
         Marks.LabelBrush.Style = bsClear
@@ -533,9 +533,9 @@ object Form1: TForm1
     Extent.UseXMax = True
     Extent.UseXMin = True
     Extent.UseYMin = True
-    Extent.XMax = 250
+    Extent.XMax = 270
     Title.Text.Strings = (
-      'Gráfico do Diâmetro de perfuração vs Afastamento'
+      'Gráfico qualidade da fragmentação'
     )
     Title.Visible = True
     ParentShowHint = False
@@ -566,6 +566,27 @@ object Form1: TForm1
     Caption = 'Preencher automático'
     TabOrder = 15
     OnClick = btnPreencherAutomaticoClick
+  end
+  object Label28: TLabel
+    Left = 913
+    Height = 19
+    Top = 680
+    Width = 451
+    Caption = 'Arraste a barra para alterar o diâmetro da perfuração/explosivo (mm)'
+  end
+  object Label29: TLabel
+    Left = 913
+    Height = 19
+    Top = 641
+    Width = 229
+    Caption = 'Diâmtro de perfuração/explosivo = '
+  end
+  object lblDiametroFuroExplosivo: TLabel
+    Left = 1152
+    Height = 19
+    Top = 640
+    Width = 38
+    Caption = '0 mm'
   end
   object MainMenu1: TMainMenu
     Left = 104

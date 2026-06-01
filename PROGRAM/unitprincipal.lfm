@@ -1,18 +1,18 @@
 object Form1: TForm1
-  Left = 2360
-  Height = 656
-  Top = 167
-  Width = 1443
+  Left = 2255
+  Height = 712
+  Top = 166
+  Width = 1476
   Caption = 'PlanFogo v0.1'
-  ClientHeight = 656
-  ClientWidth = 1443
+  ClientHeight = 712
+  ClientWidth = 1476
   Menu = MainMenu1
   LCLVersion = '4.6.0.0'
   OnCreate = FormCreate
   object btnSair: TButton
-    Left = 608
+    Left = 616
     Height = 41
-    Top = 600
+    Top = 658
     Width = 91
     Caption = '&Sair'
     TabOrder = 0
@@ -52,25 +52,25 @@ object Form1: TForm1
     Transparent = False
   end
   object btnCalcular: TButton
-    Left = 32
+    Left = 40
     Height = 41
-    Top = 600
+    Top = 658
     Width = 91
     Caption = 'Calcular'
     TabOrder = 2
     OnClick = btnCalcularClick
   end
   object Label3: TLabel
-    Left = 424
+    Left = 425
     Height = 19
-    Top = 175
+    Top = 191
     Width = 259
     Caption = 'Diâmetro de perfuração/explosivo (mm)'
   end
   object edtDiametroPerfuracao: TEdit
-    Left = 696
+    Left = 697
     Height = 36
-    Top = 168
+    Top = 184
     Width = 80
     TabOrder = 3
     Text = '25'
@@ -125,50 +125,50 @@ object Form1: TForm1
   object Bevel1: TBevel
     Left = 24
     Height = 8
-    Top = 144
+    Top = 152
     Width = 753
   end
   object Label7: TLabel
-    Left = 32
+    Left = 33
     Height = 19
-    Top = 176
+    Top = 192
     Width = 202
     Caption = 'Densidade do explosivo (g/cm³)'
   end
   object Label8: TLabel
-    Left = 32
+    Left = 33
     Height = 19
-    Top = 216
+    Top = 232
     Width = 229
     Caption = 'Densidade da rocha (g/cm³ ou t/m³)'
   end
   object edtDensidadeExplosivo: TEdit
-    Left = 312
+    Left = 313
     Height = 36
-    Top = 168
+    Top = 184
     Width = 80
     TabOrder = 6
     Text = '0.85'
   end
   object edtDensidadeDaRocha: TEdit
-    Left = 312
+    Left = 313
     Height = 36
-    Top = 208
+    Top = 224
     Width = 80
     TabOrder = 7
     Text = '2.7'
   end
   object Label9: TLabel
-    Left = 32
+    Left = 33
     Height = 19
-    Top = 304
+    Top = 320
     Width = 88
     Caption = 'Afastamento:'
   end
   object lblAfastamento: TLabel
-    Left = 136
+    Left = 137
     Height = 19
-    Top = 304
+    Top = 320
     Width = 25
     Caption = '0 m'
     Color = 13434879
@@ -176,48 +176,48 @@ object Form1: TForm1
     Transparent = False
   end
   object Label10: TLabel
-    Left = 32
+    Left = 33
     Height = 19
-    Top = 255
+    Top = 271
     Width = 141
     Caption = 'Altura da bancada (m)'
   end
   object edtAlturaBancada: TEdit
-    Left = 312
+    Left = 313
     Height = 36
-    Top = 247
+    Top = 263
     Width = 80
     TabOrder = 8
     Text = '15'
   end
   object Label11: TLabel
-    Left = 424
+    Left = 425
     Height = 19
-    Top = 304
+    Top = 320
     Width = 99
     Caption = 'Fragmentação:'
   end
   object lblFragmentacao: TLabel
-    Left = 536
+    Left = 537
     Height = 1
-    Top = 304
+    Top = 320
     Width = 1
     Color = clWhite
     ParentColor = False
     Transparent = False
   end
   object Label12: TLabel
-    Left = 232
+    Left = 233
     Height = 19
-    Top = 344
+    Top = 360
     Width = 60
     Caption = 'Bancada:'
     Transparent = False
   end
   object lblBancada: TLabel
-    Left = 344
+    Left = 345
     Height = 19
-    Top = 344
+    Top = 360
     Width = 28
     Caption = 'nula'
     Color = 13434879
@@ -225,16 +225,16 @@ object Form1: TForm1
     Transparent = False
   end
   object Label13: TLabel
-    Left = 32
+    Left = 33
     Height = 19
-    Top = 344
+    Top = 360
     Width = 93
     Caption = 'Espaçamento:'
   end
   object lblEspacamento: TLabel
-    Left = 136
+    Left = 137
     Height = 19
-    Top = 344
+    Top = 360
     Width = 25
     Caption = '0 m'
     Color = 13434879
@@ -242,16 +242,16 @@ object Form1: TForm1
     Transparent = False
   end
   object Label14: TLabel
-    Left = 232
+    Left = 233
     Height = 19
-    Top = 304
+    Top = 320
     Width = 100
     Caption = 'Subperfuração:'
   end
   object lblSubperfuracao: TLabel
-    Left = 344
+    Left = 345
     Height = 19
-    Top = 304
+    Top = 320
     Width = 25
     Caption = '0 m'
     Color = 13434879
@@ -277,86 +277,86 @@ object Form1: TForm1
   object Bevel3: TBevel
     Left = 24
     Height = 8
-    Top = 376
+    Top = 408
     Width = 752
   end
   object ScrllBrDiametroPerfuracao: TScrollBar
-    Left = 424
+    Left = 888
     Height = 13
-    Top = 208
-    Width = 352
+    Top = 616
+    Width = 520
     PageSize = 0
     TabOrder = 10
     OnChange = ScrllBrDiametroPerfuracaoChange
   end
   object lblFragRuim: TLabel
-    Left = 432
+    Left = 433
     Height = 19
-    Top = 336
+    Top = 352
     Width = 34
     Caption = 'Ruim'
   end
   object lblFragRegular: TLabel
-    Left = 480
+    Left = 481
     Height = 19
-    Top = 336
+    Top = 352
     Width = 51
     Caption = 'Regular'
   end
   object lblFragBoa: TLabel
-    Left = 536
+    Left = 537
     Height = 19
-    Top = 336
+    Top = 352
     Width = 25
     Caption = 'Boa'
   end
   object lblFragExcelente: TLabel
-    Left = 568
+    Left = 569
     Height = 19
-    Top = 336
+    Top = 352
     Width = 64
     Caption = 'Excelente'
   end
   object Label16: TLabel
-    Left = 424
+    Left = 425
     Height = 19
-    Top = 336
+    Top = 352
     Width = 11
     Caption = '[  '
   end
   object Label17: TLabel
-    Left = 632
+    Left = 633
     Height = 19
-    Top = 336
+    Top = 352
     Width = 11
     Caption = '  ]'
   end
   object Label18: TLabel
-    Left = 424
+    Left = 425
     Height = 19
-    Top = 255
+    Top = 232
     Width = 156
     Caption = 'Inclinação do furo (grau)'
   end
   object Label19: TLabel
-    Left = 32
+    Left = 25
     Height = 19
-    Top = 400
+    Top = 437
     Width = 141
     Caption = 'Profundidade do furo:'
   end
   object edtInclinacaoFuro: TEdit
-    Left = 696
+    Left = 697
     Height = 36
-    Top = 247
+    Top = 224
     Width = 80
     TabOrder = 11
     Text = '10'
   end
   object lblProfundidadeFuro: TLabel
-    Left = 216
+    Left = 209
     Height = 19
-    Top = 400
+    Top = 437
     Width = 25
     Caption = '0 m'
     Color = 13434879
@@ -364,16 +364,16 @@ object Form1: TForm1
     Transparent = False
   end
   object Label20: TLabel
-    Left = 32
+    Left = 25
     Height = 19
-    Top = 437
+    Top = 474
     Width = 178
     Caption = 'Ótimo tamanho do tampão:'
   end
   object lblDiametroTampao: TLabel
-    Left = 216
+    Left = 209
     Height = 19
-    Top = 437
+    Top = 474
     Width = 9
     Caption = '0'
     Color = 13434879
@@ -381,16 +381,16 @@ object Form1: TForm1
     Transparent = False
   end
   object Label21: TLabel
-    Left = 32
+    Left = 25
     Height = 19
-    Top = 472
+    Top = 509
     Width = 116
     Caption = 'Altura do tampão:'
   end
   object lblAlturaTampao: TLabel
-    Left = 216
+    Left = 209
     Height = 19
-    Top = 472
+    Top = 509
     Width = 25
     Caption = '0 m'
     Color = 13434879
@@ -398,16 +398,16 @@ object Form1: TForm1
     Transparent = False
   end
   object Label22: TLabel
-    Left = 32
+    Left = 25
     Height = 19
-    Top = 512
+    Top = 549
     Width = 168
     Caption = 'Volume de rocha por furo:'
   end
   object lblVolumeDeRochaPorFuro: TLabel
-    Left = 216
+    Left = 209
     Height = 19
-    Top = 512
+    Top = 549
     Width = 31
     Caption = '0 m³'
     Color = 13434879
@@ -415,16 +415,16 @@ object Form1: TForm1
     Transparent = False
   end
   object Label23: TLabel
-    Left = 32
+    Left = 25
     Height = 19
-    Top = 552
+    Top = 589
     Width = 146
     Caption = 'Perfuração específica:'
   end
   object lblPerfuracaoEspecifica: TLabel
-    Left = 216
+    Left = 209
     Height = 19
-    Top = 552
+    Top = 589
     Width = 35
     Caption = '0 m/t'
     Color = 13434879
@@ -432,16 +432,16 @@ object Form1: TForm1
     Transparent = False
   end
   object Label24: TLabel
-    Left = 424
+    Left = 417
     Height = 19
-    Top = 400
+    Top = 437
     Width = 200
     Caption = 'Razão linear de carregamento:'
   end
   object lblRazaoLinearCarregamento: TLabel
-    Left = 688
+    Left = 681
     Height = 19
-    Top = 400
+    Top = 437
     Width = 45
     Caption = '0 kg/m'
     Color = 13434879
@@ -449,16 +449,16 @@ object Form1: TForm1
     Transparent = False
   end
   object Label25: TLabel
-    Left = 424
+    Left = 417
     Height = 19
-    Top = 437
+    Top = 474
     Width = 245
     Caption = 'Altura da carga de fundo de explosivo:'
   end
   object lblAlturaCargaFundo: TLabel
-    Left = 688
+    Left = 681
     Height = 19
-    Top = 437
+    Top = 474
     Width = 25
     Caption = '0 m'
     Color = 13434879
@@ -466,16 +466,16 @@ object Form1: TForm1
     Transparent = False
   end
   object Label26: TLabel
-    Left = 424
+    Left = 417
     Height = 19
-    Top = 472
+    Top = 509
     Width = 251
     Caption = 'Altura da carga de coluna de explosivo:'
   end
   object lblAlturaCargaColunaExplosivo: TLabel
-    Left = 688
+    Left = 681
     Height = 19
-    Top = 472
+    Top = 509
     Width = 25
     Caption = '0 m'
     Color = 13434879
@@ -483,16 +483,16 @@ object Form1: TForm1
     Transparent = False
   end
   object Label27: TLabel
-    Left = 424
+    Left = 417
     Height = 19
-    Top = 512
+    Top = 549
     Width = 186
     Caption = 'Altura da carga de explosivo:'
   end
   object lblAlturaCargaExplosivo: TLabel
-    Left = 688
+    Left = 681
     Height = 19
-    Top = 512
+    Top = 549
     Width = 25
     Caption = '0 m'
     Color = 13434879
@@ -500,9 +500,9 @@ object Form1: TForm1
     Transparent = False
   end
   object Button1: TButton
-    Left = 144
+    Left = 152
     Height = 41
-    Top = 600
+    Top = 658
     Width = 114
     Caption = 'Limpar dados'
     TabOrder = 12
@@ -512,7 +512,7 @@ object Form1: TForm1
     Left = 800
     Height = 584
     Top = 24
-    Width = 608
+    Width = 632
     AxisList = <    
       item
         Marks.LabelBrush.Style = bsClear
@@ -533,7 +533,7 @@ object Form1: TForm1
     Extent.UseXMax = True
     Extent.UseXMin = True
     Extent.UseYMin = True
-    Extent.XMax = 250
+    Extent.XMax = 270
     Title.Text.Strings = (
       'Gráfico qualidade da fragmentação'
     )
@@ -550,22 +550,43 @@ object Form1: TForm1
     end
   end
   object btnLimparGrafico: TButton
-    Left = 280
+    Left = 288
     Height = 41
-    Top = 600
+    Top = 658
     Width = 120
     Caption = 'Limpar Gráfico'
     TabOrder = 14
     OnClick = btnLimparGraficoClick
   end
   object btnPreencherAutomatico: TButton
-    Left = 416
+    Left = 424
     Height = 41
-    Top = 600
+    Top = 658
     Width = 169
     Caption = 'Preencher automático'
     TabOrder = 15
     OnClick = btnPreencherAutomaticoClick
+  end
+  object Label28: TLabel
+    Left = 888
+    Height = 19
+    Top = 680
+    Width = 451
+    Caption = 'Arraste a barra para alterar o diâmetro da perfuração/explosivo (mm)'
+  end
+  object Label29: TLabel
+    Left = 888
+    Height = 19
+    Top = 640
+    Width = 229
+    Caption = 'Diâmtro de perfuração/explosivo = '
+  end
+  object lblDiametroFuroExplosivo: TLabel
+    Left = 1128
+    Height = 19
+    Top = 640
+    Width = 38
+    Caption = '0 mm'
   end
   object MainMenu1: TMainMenu
     Left = 104
