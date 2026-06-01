@@ -15,6 +15,7 @@ type
     btnFechar: TButton;
     Label1: TLabel;
     Label2: TLabel;
+    Label3: TLabel;
     lblPlanfogo: TLabel;
     lblVersao: TLabel;
     lblAutor: TLabel;

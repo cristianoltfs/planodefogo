@@ -71,4 +71,11 @@ object frmSobre: TfrmSobre
     Width = 365
     Caption = 'Projeto final da disciplina MIN755: Prof. Dr. Elton Destro'
   end
+  object Label3: TLabel
+    Left = 304
+    Height = 38
+    Top = 312
+    Width = 289
+    Caption = 'Código disponível em:'#10'https://github.com/cristianoltfs/planodefogo'
+  end
 end

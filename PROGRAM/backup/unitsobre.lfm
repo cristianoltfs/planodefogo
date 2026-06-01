@@ -11,47 +11,71 @@ object frmSobre: TfrmSobre
   Position = poScreenCenter
   LCLVersion = '4.6.0.0'
   object lblPlanfogo: TLabel
-    Left = 366
+    Left = 370
     Height = 19
-    Top = 32
+    Top = 24
     Width = 61
+    Alignment = taCenter
     Caption = 'PlanFogo'
   end
   object lblAutor: TLabel
-    Left = 248
+    Left = 196
     Height = 19
-    Top = 112
-    Width = 296
-    Caption = 'Autor: Cristiano Luís Turbino de França e Silva'
+    Top = 104
+    Width = 408
+    Caption = 'Autor: Cristiano Luís Turbino de França e Silva (SILVA, C. L. T. F.)'
   end
   object lblVersao: TLabel
-    Left = 360
+    Left = 364
     Height = 19
-    Top = 72
+    Top = 64
     Width = 72
     Caption = 'Versão: 0.1'
   end
   object lblDescricao: TLabel
-    Left = 285
+    Left = 49
     Height = 19
-    Top = 192
-    Width = 223
-    Caption = 'Programa feito como projeto final '
+    Top = 184
+    Width = 707
+    Caption = 'Utilização do livro: Silva, Valdir. Desmonte de Rochas, São Paulo: Oficina de Textos, 2019. Valdir Costa e Silva.'
   end
   object btnFechar: TButton
-    Left = 352
+    Left = 364
     Height = 25
-    Top = 312
+    Top = 272
     Width = 75
     Caption = 'Fechar'
     TabOrder = 0
     OnClick = btnFecharClick
   end
   object lblEmail: TLabel
-    Left = 290
+    Left = 288
     Height = 19
-    Top = 152
+    Top = 144
     Width = 213
     Caption = 'E-mail: cristianoltfs@gmail.com'
+  end
+  object Label1: TLabel
+    Left = 0
+    Height = 19
+    Top = 361
+    Width = 800
+    Align = alBottom
+    Alignment = taCenter
+    Caption = 'GNU : General Public License'
+  end
+  object Label2: TLabel
+    Left = 218
+    Height = 19
+    Top = 224
+    Width = 365
+    Caption = 'Projeto final da disciplina MIN755: Prof. Dr. Elton Destro'
+  end
+  object Label3: TLabel
+    Left = 376
+    Height = 19
+    Top = 312
+    Width = 43
+    Caption = 'Label3'
   end
 end
