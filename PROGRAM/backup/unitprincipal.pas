@@ -103,7 +103,6 @@ type
     procedure ScrllBrDiametroPerfuracaoChange(Sender: TObject);
 
     procedure AtualizarFragmentacao(frag: string);
-    procedure ConfigurarCoresGrafico(Cor: TColor);
 
   private
 
@@ -161,6 +160,8 @@ type
 
     alturaCargaExplosivo : real;
     alturaCargaExplosivoStr : string;
+
+    fragmentacaoAtual: string;
 
   end;
 
@@ -246,6 +247,11 @@ begin
 end;
 
 procedure TForm1.btnCalcularClick(Sender: TObject);
+
+var
+  corAtual: TColor; //para colorir as bolinhas no gráfico
+
+
 begin
 
   try
@@ -379,7 +385,19 @@ begin
 
   AtualizarFragmentacao(fragmentacao);
 
-  Chart1LineSeries1.AddXY(diametroPerfuracao, afastamento);
+
+  // Define a cor baseada na fragmentação atual
+  case fragmentacaoAtual of
+    'ruim': corAtual := clRed;
+    'regular': corAtual := clGray;  // Laranja $00005FBB
+    'boa': corAtual := clYellow;       // Amarelo  $000077AA
+    'excelente': corAtual := clGreen;
+  else
+    corAtual := clGray;
+  end;
+  // Adiciona o ponto com a cor específica
+  Chart1LineSeries1.AddXY(diametroPerfuracao, afastamento, '', corAtual);
+  // Chart1LineSeries1.AddXY(diametroPerfuracao, afastamento);
 
   except
     on E : Exception do
@@ -422,8 +440,6 @@ var
   nomes: array[0..3] of string;
   cores: array[0..3] of TColor;
   i: integer;
-  corSelecionada: TColor;
-
 begin
 
   labels[0] := lblFragRuim;
@@ -437,8 +453,8 @@ begin
   nomes[3] := 'excelente';
 
   cores[0] := clRed;
-  cores[1] := $00005FBB;  // laranja
-  cores[2] := $000077AA;  // amarelo
+  cores[1] := clGray;  // laranja $00005FBB
+  cores[2] := clYellow;       // Amarelo  $000077AA
   cores[3] := clGreen;
 
   for i := 0 to 3 do
@@ -449,8 +465,7 @@ begin
       labels[i].Font.Color := cores[i];
       labels[i].Transparent := False;
       labels[i].Color := clWhite;
-      corSelecionada := cores[i];
-
+      fragmentacaoAtual := frag; //para colorir os pontos do gráfico
     end
     else
     begin
@@ -460,23 +475,9 @@ begin
       labels[i].Transparent := TRUE;
     end;
   end;
-    // ATUALIZAR AS CORES DO GRÁFICO
-  ConfigurarCoresGrafico(corSelecionada);
 end;
 
-// Procedimento para configurar as cores do gráfico
-procedure TForm1.ConfigurarCoresGrafico(Cor: TColor);
-begin
-  // Cor dos pontos
-  Chart1LineSeries1.Pointer.Brush.Color := Cor;
-  Chart1LineSeries1.Pointer.Pen.Color := Cor;
 
-  // Opcional: alterar também a cor da linha se estiver usando
-  // Chart1LineSeries1.SeriesColor := Cor;
-
-  // Forçar redesenho do gráfico
-  // Chart1.Invalidate;
-end;
 
 end.
 

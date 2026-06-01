@@ -535,7 +535,7 @@ object Form1: TForm1
     Extent.UseYMin = True
     Extent.XMax = 250
     Title.Text.Strings = (
-      'Gráfico do Diâmetro de perfuração vs Afastamento'
+      'Gráfico qualidade da fragmentação'
     )
     Title.Visible = True
     ParentShowHint = False
